@@ -7,36 +7,25 @@ note6 = ('eleve1', 'math', 12)
 note7 = ('eleve2', 'math', 13)
 note8 = ('eleve2', 'math', 14)
 
-notes = [note1, note2, note3, note4, note5, note6,note7,note8]
+notes = [note1, note2, note3, note4, note5, note6, note7, note8]
 
 print(notes)
 print(notes[0][2])
 
-
 #Question 4 a/
 def moyenne_eleve1(liste):
-  res = 0
-  comp = 0
-  for i in range(len(liste)):
-    if liste[i][0] == 'eleve1':
-      res = res + liste[i][2]
-      comp = comp +1
-  moy = res/comp
-  return moy
+  liste_eleve = [x for x in liste if x[0] == 'eleve1']
+  notes = [y[2] for y in liste_eleve]
+  return sum(notes)/len(notes)
 
 print(moyenne_eleve1(notes))
 
 #Question 4 b/
 def moyenne_eleve1_math(liste):
-  res = 0
-  comp = 0
-  for i in range(len(liste)):
-    if liste[i][0] == 'eleve1':
-      if liste[i][1] == 'math':
-        res = res + liste[i][2]
-        comp = comp +1
-  moy = res/comp
-  return moy
+  liste_eleve = [x for x in liste if x[0] == 'eleve1']
+  liste_eleve_matiere = [y for y in liste_eleve if y[1] == 'math']
+  notes = [z[2] for z in liste_eleve_matiere]
+  return sum(notes)/len(notes)
 
 print(moyenne_eleve1_math(notes))
 
@@ -48,10 +37,8 @@ def moyenne_tuples(liste, eleve=None, matiere=None):
   return sum(notes)/len(notes)
 
 print(moyenne_tuples(notes, 'eleve1', 'math'))
-print(moyenne_tuples(notes, 'eleve1', 'eco'))
-print(moyenne_tuples(notes, 'eleve2', 'math'))
 print(moyenne_tuples(notes, 'eleve2'))
-print(moyenne_tuples(notes, 'eleve1'))
+print(moyenne_tuples(notes, matiere='eco'))
 
 
 class Note:
@@ -92,3 +79,34 @@ def moyenne_Notes(liste, eleve=None, matiere=None):
 print(moyenne_Notes(onotes))
 print(moyenne_Notes(onotes, 'eleve1', 'math'))
 
+
+#Variables d'instance, de classe, périmètre
+class Demo:
+  classattr = 'defaut'
+  def __init__(self, a):
+    self.a = a
+
+
+demo1 = Demo(1)
+demo2 = Demo(2)
+
+print(demo1.a)
+print(demo2.a)
+print(Demo.classattr)
+print(demo1.classattr)
+print(demo2.classattr)
+
+Demo.classattr = 23
+
+print(demo1.classattr)
+print(demo2.classattr)
+
+demo1.classattr = -1
+
+print(Demo.classattr)
+print(demo1.classattr)
+print(demo2.classattr)
+
+Demo.classattr = 14
+
+#Question 9
