@@ -1,0 +1,124 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.2, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: /home/stidsem4/iut/2021/controle/eva.vincent/c16_03
+collected 7 items
+
+test_16_03.py F.F...F                                                    [100%]
+
+=================================== FAILURES ===================================
+_____________________________ Test1603sute.test_10 _____________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+            from .main  import Note
+        except:
+           assert False
+        try:
+>           Note.vider()
+E           AttributeError: type object 'Note' has no attribute 'vider'
+
+test_16_03.py:98: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+            from .main  import Note
+        except:
+           assert False
+        try:
+            Note.vider()
+        except:
+>           assert False
+E           AssertionError: assert False
+
+test_16_03.py:100: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12), ('eleve2', 'math', 13), ('eleve2', 'math', 14)]
+13
+13.0
+12.666666666666666
+12.666666666666666
+13.5
+12.5
+eleve1
+maths
+13
+eleve eleve1 matiere maths note 13
+Le nom de l'élève : eleve1, la matière : maths et la note : 13
+13.125
+12.666666666666666
+1
+2
+defaut
+defaut
+defaut
+23
+23
+23
+-1
+23
+_____________________________ Test1603sute.test_4 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+>           from main import moyenne_tuples
+E           ImportError: cannot import name 'moyenne_tuples' from 'main' (/home/stidsem4/iut/2021/controle/eva.vincent/main.py)
+
+test_16_03.py:16: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+            from main import moyenne_tuples
+        except ImportError:
+            try:
+>               from .main import moyenne_tuple as moyenne_tuples
+E               ImportError: cannot import name 'moyenne_tuple' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/eva.vincent/c16_03/main.py)
+
+test_16_03.py:19: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+            from main import moyenne_tuples
+        except ImportError:
+            try:
+                from .main import moyenne_tuple as moyenne_tuples
+            except ImportError:
+>               assert False, "moyenne_tuples non définie"
+E               AssertionError: moyenne_tuples non définie
+E               assert False
+
+test_16_03.py:21: AssertionError
+_____________________________ Test1603sute.test_9 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_9>
+
+    def test_9(self):
+        try:
+            from .main  import Note
+        except:
+           assert False
+>       assert hasattr(Note, 'instances')
+E       AssertionError: assert False
+E        +  where False = hasattr(<class 'c16_03.main.Note'>, 'instances')
+
+test_16_03.py:90: AssertionError
+=========================== short test summary info ============================
+FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: assert False
+FAILED test_16_03.py::Test1603sute::test_4 - AssertionError: moyenne_tuples n...
+FAILED test_16_03.py::Test1603sute::test_9 - AssertionError: assert False
+========================= 3 failed, 4 passed in 0.08s ==========================
