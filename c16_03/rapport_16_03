@@ -3,7 +3,7 @@ platform linux -- Python 3.9.2, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
 rootdir: /home/stidsem4/iut/2021/controle/eva.vincent/c16_03
 collected 7 items
 
-test_16_03.py F.F...F                                                    [100%]
+test_16_03.py F.F....                                                    [100%]
 
 =================================== FAILURES ===================================
 _____________________________ Test1603sute.test_10 _____________________________
@@ -17,9 +17,9 @@ self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
            assert False
         try:
 >           Note.vider()
-E           AttributeError: type object 'Note' has no attribute 'vider'
+E           TypeError: vider() missing 1 required positional argument: 'self'
 
-test_16_03.py:98: AttributeError
+test_16_03.py:98: TypeError
 
 During handling of the above exception, another exception occurred:
 
@@ -52,16 +52,7 @@ eleve eleve1 matiere maths note 13
 Le nom de l'élève : eleve1, la matière : maths et la note : 13
 13.125
 12.666666666666666
-1
-2
-defaut
-defaut
-defaut
-23
-23
-23
--1
-23
+['eleve1', 'maths', 13]
 _____________________________ Test1603sute.test_4 ______________________________
 
 self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
@@ -103,22 +94,7 @@ E               AssertionError: moyenne_tuples non définie
 E               assert False
 
 test_16_03.py:21: AssertionError
-_____________________________ Test1603sute.test_9 ______________________________
-
-self = <c16_03.test_16_03.Test1603sute testMethod=test_9>
-
-    def test_9(self):
-        try:
-            from .main  import Note
-        except:
-           assert False
->       assert hasattr(Note, 'instances')
-E       AssertionError: assert False
-E        +  where False = hasattr(<class 'c16_03.main.Note'>, 'instances')
-
-test_16_03.py:90: AssertionError
 =========================== short test summary info ============================
 FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: assert False
 FAILED test_16_03.py::Test1603sute::test_4 - AssertionError: moyenne_tuples n...
-FAILED test_16_03.py::Test1603sute::test_9 - AssertionError: assert False
-========================= 3 failed, 4 passed in 0.06s ==========================
+========================= 2 failed, 5 passed in 0.05s ==========================
