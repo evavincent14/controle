@@ -42,11 +42,15 @@ print(moyenne_tuples(notes, matiere='eco'))
 
 
 class Note:
+  instances = []
   def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
     self.eleve = eleve
     self.matiere = matiere
     self.valeur = valeur
+    self.instances = [self.eleve, self.matiere, self.valeur]
 
+  def vider(self):
+    self.instances = []
 
   def afficher(self):
     print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
@@ -81,32 +85,6 @@ print(moyenne_Notes(onotes, 'eleve1', 'math'))
 
 
 #Variables d'instance, de classe, périmètre
-class Demo:
-  classattr = 'defaut'
-  def __init__(self, a):
-    self.a = a
-
-
-demo1 = Demo(1)
-demo2 = Demo(2)
-
-print(demo1.a)
-print(demo2.a)
-print(Demo.classattr)
-print(demo1.classattr)
-print(demo2.classattr)
-
-Demo.classattr = 23
-
-print(demo1.classattr)
-print(demo2.classattr)
-
-demo1.classattr = -1
-
-print(Demo.classattr)
-print(demo1.classattr)
-print(demo2.classattr)
-
-Demo.classattr = 14
 
 #Question 9
+print(onote.instances)
