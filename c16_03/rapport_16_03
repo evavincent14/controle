@@ -97,4 +97,4 @@ test_16_03.py:21: AssertionError
 =========================== short test summary info ============================
 FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: assert False
 FAILED test_16_03.py::Test1603sute::test_4 - AssertionError: moyenne_tuples n...
-========================= 2 failed, 5 passed in 0.08s ==========================
+========================= 2 failed, 5 passed in 0.05s ==========================
